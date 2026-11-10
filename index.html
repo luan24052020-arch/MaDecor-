@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MA Decor - Controle de Pedidos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <aside class="sidebar">
+        <div class="logo">
+            <h2>MA DECOR</h2>
+            <p>Controle de produção</p>
+        </div>
+
+        <nav>
+            <a href="#inicio" class="menu-ativo">🏠 Início</a>
+            <a href="#recebimento">📦 Recebimento de materiais</a>
+            <a href="#pedidos">📋 Todos os pedidos</a>
+        </nav>
+
+        <div class="sidebar-rodape">
+            <p>MA DECOR</p>
+            <small>Sistema de gerenciamento</small>
+        </div>
+    </aside>
+
+    <main class="conteudo">
+
+        <section id="inicio">
+            <h1>Painel principal</h1>
+            <p>Acompanhe os pedidos e materiais da MA Decor.</p>
+
+            <div class="painel-indicadores">
+
+                <div class="indicador">
+                    <h3>Total de pedidos</h3>
+                    <h2 id="totalPedidos">0</h2>
+                </div>
+
+                <div class="indicador">
+                    <h3>Em produção</h3>
+                    <h2 id="pedidosProducao">0</h2>
+                </div>
+
+                <div class="indicador">
+                    <h3>Aguardando aprovação</h3>
+                    <h2 id="pedidosAprovacao">0</h2>
+                </div>
+
+                <div class="indicador">
+                    <h3>Prontos para retirada</h3>
+                    <h2 id="pedidosProntos">0</h2>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="recebimento" hidden>
+            <h1>Recebimento de materiais</h1>
+            <p>Registre os pedidos e os materiais que chegaram à empresa.</p>
+
+            <form id="formPedido">
+
+                <div class="campo">
+                    <label for="cliente">Cliente</label>
+                    <input type="text" id="cliente"
+                        placeholder="Nome do cliente" required>
+                </div>
+
+                <div class="campo">
+                    <label for="dataEntrada">Data de recebimento</label>
+                    <input type="date" id="dataEntrada" required>
+                </div>
+
+                <h3>Materiais recebidos</h3>
+
+                <div id="listaVidros"></div>
+
+                <button type="button" id="adicionarVidro">
+                    + Adicionar material
+                </button>
+
+                <div class="campo">
+                    <label for="observacoes">Observações</label>
+                    <textarea id="observacoes"
+                        placeholder="Informações adicionais"></textarea>
+                </div>
+
+                <button type="submit">Salvar recebimento</button>
+
+            </form>
+        </section>
+
+        <section id="pedidos" hidden>
+            <h1>Todos os pedidos</h1>
+            <p>Consulte e acompanhe os pedidos cadastrados.</p>
+
+            <input type="text" id="pesquisaPedidos"
+                placeholder="Pesquisar pedido ou cliente...">
+
+            <div id="listaPedidos"></div>
+        </section>
+
+    </main>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
